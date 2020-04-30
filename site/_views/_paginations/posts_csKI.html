@@ -1,0 +1,25 @@
+{%- capture items -%}
+{%- for item in pagination.items -%}
+<div class="blog-thumbnail w-dyn-item w-col w-col-4">
+              <a href="#" data-ix="blog-thumbnail" class="thumbnail-wrapper w-inline-block">
+                <div class="image-wrapper">
+                  <div class="thumbnail-image" style="background-image: url({{ item.data.main-image }})"></div>
+                  {%- assign references = collections.categories | filterBy: item.data.category,'fileSlug' | limit: 1 -%}{%- for ref in references -%}<div>
+                    <div class="category-tag" style="background-color: {{ ref.data.color }};">{{ ref.data.title }}</div>
+                  </div>{%- endfor -%}
+                </div>
+                <div class="thumbnail-text">
+                  <div class="blog-title">{{ item.data.title }}</div>
+                  <div class="preview-text">{{ item.data.post-description }}</div>
+                </div>
+                <div class="thumb-details w-clearfix">
+                  <div class="thumbnail-date">{{ item.date | formatDate }}</div>
+                </div>
+              </a>
+            </div>
+{%- endfor -%}
+{%- endcapture -%}
+{
+  "itemsHTML": {{ items | json: true }},
+  "href": {{pagination.href | json }}
+}

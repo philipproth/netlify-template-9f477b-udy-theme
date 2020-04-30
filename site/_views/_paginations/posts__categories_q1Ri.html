@@ -1,0 +1,20 @@
+{%- capture items -%}
+{%- for item in tag.items -%}
+<div class="blog-thumbnail w-dyn-item w-col w-col-3">
+            <a href="{{ item.url }}" data-ix="blog-thumbnail" class="thumbnail-wrapper w-inline-block">
+              <div class="image-wrapper">
+                <div class="thumbnail-image" style="background-image: url({{ item.data.main-image }})"></div>
+              </div>
+              <div class="thumbnail-text">
+                <div class="blog-title">{{ item.data.title }}</div>
+                <div class="preview-text">{{ item.data.post-description }}</div>
+              </div>
+            </a>
+          </div>
+{%- endfor -%}
+{%- endcapture -%}
+{
+  "itemsHTML": {{ items | json: true }},
+  "pages": {{ tag.length | json }},
+  "currentPage": {{tag.pageNumber | json}}
+}
