@@ -1,8 +1,9 @@
 ---
-title: "About"
+title: About
 permalink: "{{ page.fileSlug }}/index.html"
-layout: "about.html"
-slug: "about"
+date: 2020-04-30T07:56:36.662Z
+layout: about.html
+slug: about
 seo:
-  title: "About | Escape Template"
+  title: About | Escape Template
 ---
