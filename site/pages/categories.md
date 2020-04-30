@@ -1,8 +1,9 @@
 ---
-title: "Categories"
+title: Categories
 permalink: "{{ page.fileSlug }}/index.html"
-layout: "categories.html"
-slug: "categories"
+date: 2020-04-30T07:58:09.708Z
+layout: categories.html
+slug: categories
 seo:
-  title: "Category | Escape Template"
+  title: Category | Escape Template
 ---
